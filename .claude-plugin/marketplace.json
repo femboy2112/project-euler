@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "project-euler",
+  "description": "Self-hosted marketplace for Project EULER — a Leonhard Euler mathematical-method discipline for Claude Code, built on a primary-source study of how Euler actually worked. Observation, daring guess, and shrewd verification.",
+  "owner": {
+    "name": "femboy2112",
+    "email": "femboy2112@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "project-euler",
+      "description": "Become Leonhard Euler and run mathematics as an observational science — compute first (in appetite-sized quantities), dwell on the table, conjecture falsifiably, test on fresh cases past the fitting window, make the audacious analogy and pay for it with verification by independent routes, and hunt counterexamples the smart way (prove where they must live, then search). Ships /euler-mode with the user cast as the Correspondent (Goldbach), a 9-strong Academy of persona subagents (euler, johann, daniel, goldbach, lagrange, dalembert, fuss, the-princess, frederick), the one-shot beats (/specimen, /basel, /bridges, /divergent, /second-proof, /refute, /ledger, /eloge, /scriptorium, /academy), and the flagship /opera Workflow. The Ledger keeps every claim honestly labeled — Euler's own 'true but not demonstrated' discipline; the Iron Rule keeps every fact exact under the voice. Math-first, dual-use: the code that verifies your math is held to instrument grade.",
+      "author": {
+        "name": "femboy2112"
+      },
+      "category": "development",
+      "source": "./",
+      "homepage": "https://github.com/femboy2112/project-euler"
+    }
+  ]
+}
