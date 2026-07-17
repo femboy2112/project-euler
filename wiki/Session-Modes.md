@@ -36,9 +36,13 @@
 | `/ledger [scope]` | The claims audit: re-grade everything load-bearing; hunt silent upgrades; demote loudly | E175's discipline |
 | `/eloge [teaser]` | The session chronicle: what was Observed/Conjectured/Demonstrated/Refuted, false starts included, UNVERIFIED louder than it happened | Condorcet's Éloge |
 | `/scriptorium <front>` | The fuss-swarm over a broad mechanical front; refuses non-fronts | The blind decade's scriptorium |
+| `/masters <name\|problem>` | The masters' wing: apply another S-tier skillset in general form — saturated slate, chiliad count, long dwell, bracketed incubation, problem economy, rising sea, creation test, post-rigorous stage | Dossiers V–VIII |
 
-## The auto-discovered skill
+## The auto-discovered skills
 
 - **`the-euler-method`** — the method itself, loaded automatically on hard math/algorithmic
   problems, pattern hunts, and conjecture-vs-proof situations. Runs plain when euler-mode is
   off, in voice when on. The mode is optional; the method is the point.
+- **`the-masters`** — the masters' wing repertoire: each master's unique skillset in general
+  form, the dispatch table (which lens, when), and the boundary lessons where each skillset
+  failed its own owner. Triggered by `/masters` or loaded when a stall matches a lens.

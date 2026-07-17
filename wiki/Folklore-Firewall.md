@@ -1,9 +1,9 @@
 # The Folklore Firewall — what this plugin refuses to repeat as fact
 
-A plugin about honest labels cannot have dishonest anecdotes. The research pass
-(dossiers II–IV in [`research/`](../research/)) provenance-checked the famous Euler stories;
-these are the verdicts, and they **bind the mode**: items below are either never repeated, or
-repeated only with their honest provenance attached.
+A plugin about honest labels cannot have dishonest anecdotes. The research passes
+(dossiers II–IV for Euler, V–VIII for the masters' wing, in [`research/`](../research/))
+provenance-checked the famous stories; these are the verdicts, and they **bind the mode**:
+items below are either never repeated, or repeated only with their honest provenance attached.
 
 ## Debunked outright
 
@@ -77,3 +77,79 @@ repeated only with their honest provenance attached.
   theorem and a structure theorem for the odd case. (His documented wrong conjectures — 36
   officers, sum of powers — were labeled unproven at birth; see
   [The-Ledger](The-Ledger.md).)
+
+---
+
+## The masters' wing additions (dossiers V–VIII)
+
+### Debunked or unverifiable in the famous form
+
+- **The Gauss schoolroom sum (1 + 2 + ⋯ + 100).** LEGEND in its modern form. Brian Hayes
+  (*American Scientist*, 2006) cataloged ~70 tellings; the earliest source (Sartorius von
+  Waltershausen, 1856) names **no** specific series and **no** method — the 1-to-100 series,
+  the pairing trick, the racing pupils, and "Ligget se'" are all later accretions. The kernel
+  (a small boy stuns schoolmaster Büttner) is attested but sparse.
+- **Gauss: "I have had my results for a long time: but I do not yet know how I am to arrive at
+  them."** Attributed only; nearest source Sartorius 1856, the common Arago route unconfirmed.
+  If genuine, it is the purest statement of the results-before-path habit that was Gauss's
+  signature *and* his flaw — but it is not verified, so it is not quoted as fact.
+- **"A mathematician is a machine for turning coffee into theorems" — NOT Erdős.** The line is
+  **Alfréd Rényi's**; the earliest attestation is Erdős himself crediting Rényi ("Child
+  Prodigies," 1971). Erdős is the popularizer. (Turán's related quip: weak coffee is "fit only
+  for lemmas.")
+- **Ramanujan: "An equation has no meaning for me unless it expresses a thought of God."**
+  Weak primary attestation — traceable only to Ranganathan's devotional biography (1967, p. 88)
+  as a "statement to a friend," 47 years posthumous. Usable only as "reported by Ranganathan."
+- **Namagiri dictating formulas in dreams.** LEGEND-UNVERIFIED *as a work-method* — Hardy
+  dismissed it as "a fable"; the well-attested Namagiri episode is his **mother's**
+  permission-dream. Conflict on the record (Hardy: effectively agnostic; Kanigel: he hid his
+  spirituality from "an atheist evangelist") — both cited, neither settled. The belief was real
+  to Ramanujan and is treated with respect; it is never laundered into a technique.
+
+### True story, embellished details
+
+- **The taxicab and 1729.** Hardy's own account is VERBATIM and real. But (a) the "burst into
+  the room" drama is C.P. Snow's flourish, and (b) Ono & Trebat-Leder showed Ramanujan had
+  recorded a³+b³=c³+d³ solutions for years — **recognition of an old friend, not an
+  instantaneous flash**. The true lesson is intimacy with the numbers, which is better than
+  the myth.
+- **"Every positive integer was one of his personal friends."** Hardy's 1921 obituary, phrased
+  "It was Littlewood (I believe) who said…" — even the attribution carries Hardy's hedge. Quote
+  it with the hedge.
+- **Newton's apple.** Stukeley's manuscript (recording Newton's own recollection, 15 April
+  1726) is a real primary document — the apple *fell* and *occasioned* the thought. The
+  hit-on-the-head version appears in no source.
+- **"Newton computed the hyperbola to 52 places and was ashamed to tell how far."** A weld of
+  two true facts: the 52 figures were the hyperbola area (plague years); the "ashamed to tell"
+  remark was about his π computation. Keep them separate.
+- **"Tanquam ex ungue leonem."** Bernoulli wrote *ex ungue leonem* (1697); the *tanquam* is
+  Brewster's 1855 embellishment.
+- **"Gauss used least squares to find Ceres."** DISPUTED — he concealed his 1801 method and
+  published least squares only in *Theoria Motus* (1809). The deadline computation is
+  documented; the specific mechanism is not.
+
+### Attribution hygiene
+
+- **The four-stage creativity model (preparation → incubation → illumination → verification)
+  is not Hadamard's.** Lineage: Helmholtz gestured (1891), **Poincaré witnessed** (1908),
+  **Wallas formalized and named** (*The Art of Thought*, 1926), **Hadamard applied** (1945).
+- **Poincaré's "It is by logic that we prove, but by intuition that we discover"** is from
+  *Science and Method* (1908), Book II, Ch. 2 (Maitland trans. p. 129) — **not** *The Value of
+  Science*.
+- **Feynman's "What I cannot create, I do not understand"** is a note on his blackboard at his
+  death (Caltech Archives photo, 15 Feb 1988) — genuine and first-hand, but a note-to-self,
+  not a published aphorism, and the Wittgenstein lineage sometimes grafted onto it has no
+  primary basis. Quote the board.
+- **The "keep a dozen favorite problems" advice is Rota reporting Feynman** (*Ten Lessons I
+  Wish I Had Been Taught*, Notices AMS, 1997), not a first-person Feynman quotation.
+- **The "rising sea" wording ("ripened avocado," "hard marl") is McLarty's translation** of
+  Grothendieck's *la mer qui monte* — name the translator when quoting.
+- **Erdős's coauthor count** drifts (509/511/512 by date and counting rule) — state it as
+  approximate.
+- **Do not flatten the Weil-conjectures history into "Grothendieck failed."** His étale
+  cohomology is what Deligne's 1974 proof runs on; the precise claim is that his *intended
+  route* (the standard conjectures, still open) was not what closed it, and he was documented
+  as "both fascinated and disappointed" by the directed finish.
+- **"Incubation is passive rest" / "coffee causes breakthroughs."** Both contradicted by
+  Poincaré's own text: unconscious work is fruitful only when *bracketed by* conscious work,
+  and he downgrades the coffee himself — the fifteen prior days of effort were the cause.
