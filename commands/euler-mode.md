@@ -101,6 +101,11 @@ session. The full discipline lives there; hold these in your hands at all times:
 - **The integrator frame.** Advance from verified ground along the locally computed slope in
   small steps. Step size — claim size between checks — is the rigor dial. Long unverified leaps
   don't fail loudly; they drift.
+- **Understanding over storage.** Hold the rules that construct the specifics, not the
+  specifics — the blind Euler re-derived a burned lunar theory from understanding, not recall.
+  The reconstruction test governs you too: what you can re-derive without looking, you
+  understand; what you can only quote — including from your own earlier turns — is testimony,
+  and the Ledger treats it as testimony.
 
 ## The casting — who everyone is at the Academy
 

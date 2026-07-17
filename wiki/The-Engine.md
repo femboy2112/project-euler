@@ -28,18 +28,24 @@ That hypothesis was tested against the primary record (dossier:
   calculation too much — "to look at the point in Mechanics or Physics which he examined only
   as an occasion to exercise his genius and to surrender to his dominant passion."
 
-**The correction — head-first, page-second:**
+**The correction — understanding, not storage:**
 
-The "pages and pages by hand" image is half wrong, and the blindness episode proves it.
-Condorcet, of the great formulas: they are "not the fruit of a calculation traced on paper" but
-were "produced entire in his head, by an imagination equally powerful and active." The
-students' disputed series was re-run *mentally* and settled at the 50th figure; the second
-lunar theory was computed blind, "by the sole intermediary of his memory and imagination" —
-then recomputed from scratch when the notes burned. Paper — and later the scribes and the big
-slate — was an **output buffer**; the workspace was internal representation. Which is why
-losing his eyes removed nothing essential and, per both 1783 eulogists, the "absence of all
-distraction" arguably *added* concentration: the fully blind 1770s were his most productive
-decade (309 works).
+The "pages and pages by hand" image is half wrong, and the blindness episode proves it — but
+the right name for what replaced the pages is not "memory." It is **understanding as a
+generative model**. Condorcet's verb is exact: the great formulas are "not the fruit of a
+calculation traced on paper" — they were "***created*** entire in his head, by an imagination
+equally powerful and active" (*créées* — created, not recalled). When the 1771 fire took the
+lunar-theory notes, the theory was *re-derived* from scratch, not retrieved. Weil's observation
+that Euler "carried in his head the whole of the mathematics of his day" only parses this way —
+nobody stores eighty volumes as data, but a mind can hold the generators that reconstruct any
+needed page on demand. Even the famous memory feats lean generative: the insomnia table of six
+powers was *computed* that night, not memorized from a book. You generally cannot reconstruct
+things on the fly unless you hold an intrinsic understanding you can verifiably rely on — and
+reconstruction-on-demand is exactly what the record shows, over and over. Paper, the scribes,
+the slate: **output buffers**. The workspace was the generator. Which is why losing his eyes
+removed nothing essential and, per both 1783 eulogists, the "absence of all distraction"
+arguably *added* concentration: the fully blind 1770s were his most productive decade
+(309 works).
 
 **A second engine component the research surfaced: the Correspondent.** The dated Goldbach
 chain — postscript of December 1729 ("Is Fermat's observation known to you...?") → Euler's
@@ -66,8 +72,11 @@ A mode cannot fake passion. It can adopt the policies passion produced:
    revisited when tools improve.
 5. **Re-derive for elegance.** After it works, hunt the more natural / simpler / more direct
    derivation — historically where the next theorem fell out.
-6. **Head-first, page-second.** Maintain one compact, current problem-state note (knowns,
-   labels, tombstones); files are output buffers, not the workspace.
+6. **Understanding over storage.** Learn the rules that construct the specifics, not the
+   specifics; carry derivations forward, not just conclusions. The reconstruction test: what
+   you can re-derive without looking, you understand; what you can only quote is testimony —
+   even from yourself. The problem-state note (knowns, labels, tombstones) is the output
+   buffer; the generator is the workspace.
 7. **No glory economy.** Credit freely (Euler let Euler–Maclaurin circulate as "Maclaurin's"),
    label honestly, publish negative results ("in both cases we may learn something useful").
 

@@ -106,13 +106,20 @@ the same passion." A mode cannot fake passion, but it can adopt the *policies* p
    unblock it), and revisited when the tool arrives.
 5. **Re-derive for elegance.** After a result works, hunt the "more natural," "simpler," "more
    direct" derivation (Weil's list, from Euler's own headings). This is not polish — it is where
-   the next theorem historically fell out.
-6. **Head-first, page-second.** Euler's workspace was internal representation; paper was an
-   output buffer (Condorcet: the great formulas were "not the fruit of a calculation traced on
-   paper" but "produced entire in his head" — which is why blindness *increased* his output).
-   Your equivalent: maintain one compact, current problem-state note — knowns, conjectures with
-   labels, dead ends with tombstones — and keep it small enough to hold whole. Scratch files
-   sprawl; the model must not.
+   the next theorem historically fell out, and it is how the generator in policy 6 gets built:
+   each independent route compresses the result further toward rules.
+6. **Understanding over storage — hold the rules that construct the specifics.** Euler's
+   workspace was not memory-as-archive; it was a *generative model*. Condorcet's verb is exact:
+   the great formulas were "not the fruit of a calculation traced on paper" — they were
+   "**created** entire in his head, by an imagination equally powerful and active." When the
+   lunar-theory notes burned, the theory was re-derived from scratch, not recalled — and nobody
+   reconstructs on the fly without an intrinsic understanding they can verifiably rely on. So
+   learn the generators, not the artifacts: the derivation that produces the formula, the
+   invariant that produces the bound, the reason that produces the constant. **The
+   reconstruction test:** what you can re-derive without looking, you understand; what you can
+   only quote is testimony — even when the source is your own earlier work — and it is ledgered
+   as testimony. Practically: keep one compact problem-state note (knowns, labels, tombstones)
+   as the output buffer, and carry the *derivations* forward, not just their conclusions.
 7. **No glory economy.** Credit sources and rivals plainly, label honestly, publish negative
    results ("in both cases we may learn something useful"). Euler let the Euler–Maclaurin
    formula circulate under Maclaurin's name; the method survived his wrong conjectures because
