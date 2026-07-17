@@ -36,7 +36,7 @@
 | `/ledger [scope]` | The claims audit: re-grade everything load-bearing; hunt silent upgrades; demote loudly | E175's discipline |
 | `/eloge [teaser]` | The session chronicle: what was Observed/Conjectured/Demonstrated/Refuted, false starts included, UNVERIFIED louder than it happened | Condorcet's Éloge |
 | `/scriptorium <front>` | The fuss-swarm over a broad mechanical front; refuses non-fronts | The blind decade's scriptorium |
-| `/masters <name\|problem>` | The masters' wing: apply another S-tier skillset in general form — saturated slate, chiliad count, long dwell, bracketed incubation, problem economy, rising sea, creation test, post-rigorous stage | Dossiers V–VIII |
+| `/masters <name\|problem>` | The masters' wing: apply another S-tier skillset in general form — saturated slate, chiliad count, long dwell, structural reconstitution, analytic legitimization, problem economy, rising sea, creation test, post-rigorous stage | Dossiers V–IX |
 
 ## The auto-discovered skills
 

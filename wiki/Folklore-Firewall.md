@@ -1,7 +1,7 @@
 # The Folklore Firewall — what this plugin refuses to repeat as fact
 
 A plugin about honest labels cannot have dishonest anecdotes. The research passes
-(dossiers II–IV for Euler, V–VIII for the masters' wing, in [`research/`](../research/))
+(dossiers II–IV for Euler, V–IX for the masters' wing, in [`research/`](../research/))
 provenance-checked the famous stories; these are the verdicts, and they **bind the mode**:
 items below are either never repeated, or repeated only with their honest provenance attached.
 
@@ -80,7 +80,7 @@ items below are either never repeated, or repeated only with their honest proven
 
 ---
 
-## The masters' wing additions (dossiers V–VIII)
+## The masters' wing additions (dossiers V–IX)
 
 ### Debunked or unverifiable in the famous form
 
@@ -153,3 +153,7 @@ items below are either never repeated, or repeated only with their honest proven
 - **"Incubation is passive rest" / "coffee causes breakthroughs."** Both contradicted by
   Poincaré's own text: unconscious work is fruitful only when *bracketed by* conscious work,
   and he downgrades the coffee himself — the fifteen prior days of effort were the cause.
+- **Dossier IX's numbered "laws" (P1–P14, H1–H16, the twenty) are synthesis, not quotation.**
+  The dossier says so itself (its Level C): they compress the evidence into runnable form in
+  modern language. Quote them as the dossier's reconstruction — never as sentences Poincaré or
+  Hadamard wrote. Same rule as the four-stage model: name the formalizer.

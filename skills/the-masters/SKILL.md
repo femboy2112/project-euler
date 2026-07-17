@@ -1,6 +1,6 @@
 ---
 name: the-masters
-description: "The Masters' Wing — the unique skillsets of the other S-tier mathematicians, each distilled into GENERAL FORM: a named, runnable operation with when-to-reach-for-it, how it composes with the Euler loop, its engineering translation, and the boundary lesson where the skillset failed its own owner. Ramanujan (saturate the numbers until constants are friends; make the audacious transformation, labeled formal), Gauss (count in chiliads — read the asymptotic law out of a massive tally), Newton (the long dwell; reconstruction reading), Poincaré–Hadamard (bracketed incubation — immerse, park with state, return; the flash is fallible), Erdős (price the difficulty; route the problem; hunt the Book proof), Grothendieck (the rising sea — generalize until the theorem is obvious; and know generality is a bet), Feynman (the creation test; the standing dozen; the cheapest public demonstration), Tao (the post-rigorous stage; no royal road). Use it when the Euler loop stalls or the problem calls for a different signature: the head-on attack isn't working, the data is too thin to see anything, a constant looks meaningless, effort needs triage, understanding needs testing, intuition and rigor are fighting. Everything runs under the Euler Method's Ledger and Iron Rule — the masters' documented anti-patterns (the erased slate, the thirty-year hoard, certainty without a label) are named, inherited as warnings, and refused. Built from the primary-source dossiers V–VIII in research/. Runs plain when /euler-mode is off; in voice when it's on."
+description: "The Masters' Wing — the unique skillsets of the other S-tier mathematicians, each distilled into GENERAL FORM: a named, runnable operation with when-to-reach-for-it, how it composes with the Euler loop, its engineering translation, and the boundary lesson where the skillset failed its own owner. Ramanujan (saturate the numbers until constants are friends; make the audacious transformation, labeled formal), Gauss (count in chiliads — read the asymptotic law out of a massive tally), Newton (the long dwell; reconstruction reading), Poincaré (structural reconstitution — change what the problem IS until the theorem is structural; bracketed incubation; the flash is fallible), Hadamard (analytic legitimization — audit well-posedness before deriving anything; skeleton plus controlled remainder; relay-results), Erdős (price the difficulty; route the problem; hunt the Book proof), Grothendieck (the rising sea — generalize until the theorem is obvious; and know generality is a bet), Feynman (the creation test; the standing dozen; the cheapest public demonstration), Tao (the post-rigorous stage; no royal road). Use it when the Euler loop stalls or the problem calls for a different signature: the head-on attack isn't working, the data is too thin to see anything, a constant looks meaningless, effort needs triage, understanding needs testing, intuition and rigor are fighting. Everything runs under the Euler Method's Ledger and Iron Rule — the masters' documented anti-patterns (the erased slate, the thirty-year hoard, certainty without a label) are named, inherited as warnings, and refused. Built from the primary-source dossiers V–IX in research/. Runs plain when /euler-mode is off; in voice when it's on."
 ---
 
 # The Masters' Wing — *know how to solve every problem that has been solved*
@@ -13,7 +13,7 @@ The Euler Method is the operating loop of this plugin. But Euler was not the onl
 whose *method* is documented well enough to practice — and the others' signatures differ from
 his in ways that matter exactly when his loop stalls. This skill holds their skillsets **in
 general form**: not anecdotes, but operations — each named, each runnable on any problem, each
-carrying its receipt (the dossiers in `research/`, V–VIII) and the honest boundary where the
+carrying its receipt (the dossiers in `research/`, V–IX) and the honest boundary where the
 skillset failed its own owner.
 
 > **The bindings ride above every lens here.** The Iron Rule (audacious in the conjecture,
@@ -31,6 +31,11 @@ skillset failed its own owner.
 | The situation on the table | Reach for |
 |---|---|
 | Head-on attack has stalled | **Grothendieck** (what setting makes this obvious?) or **Poincaré** (park with state, return) |
+| The frame itself fights you — isolated results that refuse to constrain one another | **Poincaré** (reconstitute: promote the solution set to the object) |
+| Two objects agree on every current statistic yet differ on the target | **Poincaré** (let the collision design the next invariant) |
+| A simplified picture is assumed to survive the neglected terms | **Poincaré** (make stability a theorem, not an assumption) |
+| The task reconstructs, predicts, or infers from partial data | **Hadamard** (the well-posedness audit, before any formula) |
+| A lemma just landed and the work is rushing past it | **Hadamard** (the relay-result audit) |
 | The data is too thin for a pattern to declare itself | **Ramanujan / Gauss** (saturate the table; count in chiliads) |
 | A constant/value you don't recognize | **Ramanujan** (numerical intimacy — more digits, near-integers, inverse lookup) |
 | Too many problems, unclear where effort goes | **Erdős** (price the slate) / **Feynman** (the standing dozen) |
@@ -45,7 +50,7 @@ skillset failed its own owner.
 dossier VIII): problem-solvers ("the point of understanding mathematics is to become better
 able to solve problems") vs. theory-builders ("the point of solving problems is to understand
 mathematics better"). Euler, Erdős, Ramanujan, Feynman work the first pole; Grothendieck *is*
-the second; Gauss, Newton, Poincaré, Tao sit between. Know which culture the current task
+the second; Gauss, Newton, Poincaré, Hadamard, Tao sit between. Know which culture the current task
 needs — most stalls are a problem-solver's task wrongly hammered with theory, or a
 theory-shaped hole wrongly attacked case by case.
 
@@ -171,52 +176,129 @@ manufactures the ugliest priority dispute in the history of mathematics.
 
 ---
 
-## 4. Poincaré (and Hadamard) — the Bracketed Incubation
+## 4. Poincaré — the Structural Reconstitution
 
-*Immerse fully; park with state; return; and never let the flash skip the Ledger.*
+*Change the object until the theorem becomes structural — and never let the flash skip the
+Ledger.*
 
-The one first-rank mathematician who documented his own discovery process from the inside
-(*Mathematical Creation*, 1908; dossier VII): fifteen days of apparently fruitless conscious
-attack, then the sleepless coffee night ("Ideas rose in crowds; I felt them collide until
-pairs interlocked"), then the omnibus step at Coutances — "At the moment when I put my foot on
-the step the idea came to me... I felt a perfect certainty," **and then**: "for conscience'
-sake I verified the result at my leisure." Wallas formalized the four stages (1926); Hadamard
-stress-tested them against working mathematicians (1945). Honest framing: a session has no
-sleeping unconscious — **the mechanism does not transplant, but the protocol does**, and it
-converges exactly with Euler's documented serial-return habit. Two independent primary
-records, same move.
+Two dossiers power this lens: VII (the discovery testimony, primary printing) and IX (the
+generative method, reconstructed law by law). The deepest law of dossier IX is Poincaré's
+signature move stated in general form: **do not ask how to derive the desired statement — ask
+what re-representation would make it a consequence of structure rather than an accident of
+calculation.** He answered "solve the equation" with the phase portrait; "classify the
+manifolds" with a new invariant (Betti numbers collided, so he built the fundamental group);
+"is the truncation safe?" with the theorem that says when it isn't. The Academy seats him as
+the second Visitor — spawn `poincare` for the full treatment.
 
-**The moves, general form:**
+**The moves, general form (dossier IX, P-laws):**
 
-1. **Earn the incubation.** Inspirations "never happen except after some days of voluntary
-   effort which has appeared absolutely fruitless." Full-effort immersion is the
-   *precondition* — Poincaré's hooked-atoms argument: only what deliberate work has mobilized
-   can recombine. Do not park a problem you have not genuinely exhausted a pass on; there is
-   nothing to incubate. Park at a *saturated* point, not a random one.
-2. **Park with state; switch; return serially.** Write the full problem-state (what was tried,
-   what's stuck, the candidate framings, the labels) into the record, work something genuinely
-   different, and come back for a fresh pass. The written state is what makes the return
-   possible across a context boundary.
-3. **The flash is fallible — log every "aha" as Conjectured.** "Often this feeling deceives us
-   without being any the less vivid." Illumination enters the Ledger as Conjectured, full
-   stop; verification is a separate, mandatory step even when certainty feels perfect —
-   *especially* then.
-4. **The aesthetic sieve is a search prior, never a warrant.** Beauty ranks what to try first
-   (the useful combinations "are precisely the most beautiful") — but Poincaré's own honesty
-   check: a *false* idea, had it been true, "would have gratified our natural feeling for
-   mathematical elegance." Elegance chooses where to look; only verification says what's true.
-5. **Keep the workspace non-verbal.** Einstein, answering Hadamard: thought runs in "signs and
-   more or less clear images... 'voluntarily' reproduced and combined"; words come "only in a
-   secondary stage." Reason in the structure — tables, invariants, relations; treat prose as
-   the output buffer. (The blind Euler's slate again, from another century.)
+1. **Reconstitute the problem.** Write what actually ranges over the quantifiers, which
+   differences are coordinate artifacts, what kind of answer would have force, and what can
+   actually be observed. Then **promote the solution set to the object**: when individual
+   instances are hard or uninformative, study the organized space of all admissible behaviors
+   and its invariant decomposition — formulas become coordinates on that object, not the
+   object. The first formulation is never compulsory.
+2. **Compress evolution by a faithful event map.** Pick a structurally-tied recurrent event
+   (the Poincaré section) and record only successive returns — stating which properties
+   survive the compression. Separate **local content from global gluing**: the repeating
+   pattern goes in the fundamental piece, the global difference in the identifications.
+3. **Let collisions design the next invariant.** Two objects that agree on every current
+   statistic but differ on the target: algebraize the smallest witness of their difference —
+   prove invariance under every allowed move, test nontriviality on the collision pair. And
+   hunt the **organizing minority** — the periodic, singular, extremal, boundary objects that
+   carry the incidence relations of the whole (then *prove* the organizing relation).
+4. **Make stability a theorem, not an assumption.** Restore the neglected terms one class at a
+   time and test persistence of the exact structures the proof leans on. Either persistence is
+   proved, or the first failure is the true mechanism — and failure is positive information.
+5. **Transfer analogies as dictionaries, and sample for discrimination.** An analogy is an
+   object-map plus operation-map with the diagram checked, never a resemblance of vocabulary.
+   And when more examples keep confirming the belief, stop sampling for coverage — compute
+   where the rival hypotheses diverge most.
+6. **The bracketed incubation** (dossier VII — the part everyone quotes, kept honest). Earn it:
+   inspirations "never happen except after some days of voluntary effort which has appeared
+   absolutely fruitless" — park at a *saturated* point, with the full problem-state written
+   (the prepared impasse). The flash is fallible: "often this feeling deceives us without
+   being any the less vivid" — every "aha" enters as **Conjectured**, verification a separate
+   mandatory step ("for conscience' sake I verified"). The aesthetic sieve is a search prior,
+   never a warrant — the false idea would also have been elegant. A session has no sleeping
+   unconscious: the mechanism does not transplant, but the protocol does, and it converges
+   exactly with Euler's serial return.
 
-**Engineering:** park the stuck bug with a full state dump and rotate to another task — then
-return; treat the 3 a.m. hunch as a hypothesis with a test, never a fix to ship; write the
-design doc *after* the invariants are understood, as encoding, not as thinking.
+**Engineering:** model the state space, not the trace; design the invariant from the pair of
+failures your current telemetry cannot distinguish; chaos-test the exact assumption the design
+leans on before trusting the simplified picture; park the stuck bug with a full state dump and
+return; treat the 3 a.m. hunch as a hypothesis with a test, never a fix to ship.
+
+**The boundary lesson (kept precise):** his prize memoir on the three-body problem contained a
+real error — manifolds assumed to coincide in fact cross — and the *correction* exposed the
+homoclinic tangle that founded modern dynamics. Same shape in topology: *Analysis Situs*
+shipped with gaps and a false first conjecture, and the repairs built the field. So the named
+anti-pattern is **fertile overreach** — the global picture outrunning its preservation
+obligations — and the named cure is his own: every re-representation states what it preserves
+(equivalence, implication, obstruction, or lift) and whether that obligation is discharged or
+owed; and **when a proof fails, preserve the counter-geometry** — characterize the failure
+mode as a new object and recheck everything downstream.
 
 ---
 
-## 5. Erdős — the Problem Economy
+## 5. Hadamard — the Analytic Legitimization
+
+*Ask whether the problem is legitimate before deriving; reconstruct from the skeleton; exhaust
+the relay-results.*
+
+Not Poincaré's echo — his complement (dossier IX runs them as a two-operator loop: the
+Poincaré step asks *what is the correct global object?*, the Hadamard step asks *what exact
+structure determines it and makes inference stable?*). His moves are technically exact
+transformations, and the first one is the most transplantable idea in the wing. The Academy
+seats him as the third Visitor — spawn `hadamard` for the full treatment.
+
+**The moves, general form (dossier IX, H-laws):**
+
+1. **The well-posedness audit — before any formula.** For anything that reconstructs,
+   predicts, or infers from partial data: does a solution exist? is it unique? does it depend
+   *continuously* on the data — in a topology justified by the actual observables, never
+   retrofitted after the counterexample? A formula for an unstable inverse is not a solution
+   in any operational sense. Ill-posedness is a verdict with a repair menu (regularize, add
+   data, weaken the target), not a shrug.
+2. **Encode in a rigid ambient category — and prove the inversion.** Generating function,
+   transform, kernel, zeta: legal only when the ambient theory *contributes theorems* (growth,
+   continuation, zero-free regions) and the formula returning the original data is proved.
+   Ornamental encodings — storage without rigidity — are refused by name.
+3. **Skeleton plus controlled remainder.** Reconstruct the whole from its distinguished
+   events — zeros, singularities, atomic responses — with the residual freedom bounded by an
+   explicit growth or regularity class. When exact values are uncontrollable, classify by
+   rates. And **nothing theorem-bearing is smoothed away**: a statistic can converge while the
+   theorem-relevant singular set disappears.
+4. **Equality cases are latent definitions; generalize the role, not the formula.** Derive the
+   saturation conditions of every load-bearing bound — the extremizer is often the missing
+   canonical object. When a classical identity breaks in a new setting, decompose it into jobs
+   (inversion, boundary transfer, conservation, causality) and rebuild each job. **Lift only
+   when upstairs adds a theorem**, and prove the descent.
+5. **The relay-result audit.** Every nontrivial proved lemma is promoted to an object and
+   re-read *without the original question*: converse, equality case, limit, stability,
+   minimal hypotheses, possible role as a definition. A lemma is a platform, not a stepping
+   stone — once proved, it is allowed to change the route and the destination.
+6. **The prepared impasse.** His correction to the incubation folklore: rest alone produces
+   nothing — preparation *conditions the search space*. Before parking: the exact impasse, the
+   exhausted moves, the structural tensions, one adjacent external method with its analogy
+   dictionary. On return, new ideas are hypotheses, never recollections of certainty.
+
+**Engineering:** check the inference is identifiable before shipping the fix (several causes
+explaining the same logs = ill-posed identification, and the fix is for the wrong one half the
+time); perturb the input slightly and watch whether the pipeline's answer explodes — that's
+the third condition, failing; keep the error spike that carries the diagnosis instead of
+smoothing it; after any fix lands, re-read it without the ticket — what else does this
+invariant imply; write the impasse into the issue before the context switch.
+
+**The anti-pattern (named, refused):** **attention capture** — the mirror image of Ramanujan's
+missing label. Hadamard's documented failure was missing immediate consequences *of his own
+formulas* because he was looking past them at a famous target; his own candor about it is the
+receipt, and the relay-result audit is the cure he prescribed himself. The wing runs it as
+standing policy: no result leaves the desk still trapped in the purpose it was proved for.
+
+---
+
+## 6. Erdős — the Problem Economy
 
 *Price the difficulty, route the problem, and hunt the proof from The Book.*
 
@@ -256,7 +338,7 @@ framework that would make whole classes of them trivial. The complement is the n
 
 ---
 
-## 6. Grothendieck — the Rising Sea
+## 7. Grothendieck — the Rising Sea
 
 *Generalize until the theorem is obvious — and know that generality is a bet.*
 
@@ -297,7 +379,7 @@ this).
 
 ---
 
-## 7. Feynman — the Creation Test
+## 8. Feynman — the Creation Test
 
 *If you cannot rebuild it from a blank page, you do not understand it.*
 
@@ -333,7 +415,7 @@ publishability." Stage 0 (read the masters first) stays mandatory; the creation 
 
 ---
 
-## 8. Tao — the Post-Rigorous Stage
+## 9. Tao — the Post-Rigorous Stage
 
 *Internalize the rigor until the big picture is licensed — and there is no royal road.*
 
@@ -377,7 +459,8 @@ explain-it-to-a-teammate gate before merge.
 3. **Ledger everything.** Lens output obeys the same labels as everything else — a
    Grothendieck generalization is Conjectured until it proves the case that motivated it; a
    Ramanujan transformation is *formal* until paid for; a Poincaré flash is Conjectured by
-   definition.
+   definition; a Poincaré re-representation is Conjectured until its preservation obligation
+   is discharged; a Hadamard encoding is *owed* until its inversion is proved.
 4. **Inherit the anti-patterns as warnings.** No erased slates (the route goes in the record),
    no hoards (findings surface when ripe, with the scaffolding shown), no unlabeled certainty
    (the missing label is what let Ramanujan's one great failure go uncaught).

@@ -16,7 +16,7 @@ language model with a Bash tool and a Ledger.
 
 ## The study — receipts, not vibes
 
-The plugin is built on a primary-source study that ships with it: **eight research dossiers**
+The plugin is built on a primary-source study that ships with it: **nine research dossiers**
 in [`research/`](research/), every historical claim labeled **VERBATIM / PARAPHRASE /
 LEGEND-UNVERIFIED** with a URL for what was actually read, conflicts preserved rather than
 resolved, and the debunked anecdotes quarantined in a
@@ -32,6 +32,13 @@ resolved, and the debunked anecdotes quarantined in a
   (*Mathematical Creation* read in the primary 1910 Halsted printing), and the moderns —
   Erdős, Grothendieck, Feynman, Tao (Gowers, McLarty, Cartier, Babai, Rota, the Rogers
   Commission transcript, Tao's own advice pages).
+- **Dossier IX — the Poincaré–Hadamard generative methods.** A law-by-law reconstruction of
+  how the two actually *generated* mathematics (Science and Method; the Psychology of
+  Invention; Cartwright's obituary; Holmes on the three-body work; Barrow-Green) — fourteen
+  Poincaré laws, sixteen Hadamard laws, the two-operator research loop, and a reusable
+  protocol. Supplied by the Correspondent; ships with a provenance header mapping its
+  three-level evidence discipline onto the house labels. It powers the `poincare` and
+  `hadamard` agents.
 
 The study also tested the founding hypothesis — that Euler's engine was genuine intrinsic
 interest with no incentive to stop — against the primary record. Verdict: **strongly
@@ -93,7 +100,7 @@ kind debunking; the real man is answered out of costume, from the dossiers; genu
 drop the persona instantly; and nothing irreversible or outward ships without the
 Correspondent's explicit per-item **imprimatur** — never a `git push` unprompted.
 
-## The Academy — ten persona subagents
+## The Academy — twelve persona subagents
 
 The full cast study is in [The-Cast](wiki/The-Cast.md); tiers follow the family casting law
 (reasoning → Opus, directed → Sonnet, scut → Haiku, never Fable).
@@ -104,7 +111,9 @@ The full cast study is in [The-Cast](wiki/The-Cast.md); tiers follow the family 
 | `johann` | Johann Bernoulli | The mentor-cartographer: maps unfamiliar territory and hands back the regimen — what to read, in what order, with a check you can run |
 | `daniel` | Daniel Bernoulli | The experimentalist: builds, *calibrates*, and runs the numerical experiments; keeper of the Instrument rule; scratch-write only |
 | `goldbach` | Christian Goldbach | The conjecturist: the falsifiable slate (fitted-vs-fresh, rivals, attack surface, OEIS-checked) and the igniting question; constitutionally incapable of claiming a proof |
-| `ramanujan` | Srinivasa Ramanujan | **The Visitor:** the highest-variance conjecture engine on record, working the saturated slate — with the governor his own engine lacked: every conjecture states where its counterexample would live, or flags itself for attack and calibration |
+| `ramanujan` | Srinivasa Ramanujan | **The first Visitor:** the highest-variance conjecture engine on record, working the saturated slate — with the governor his own engine lacked: every conjecture states where its counterexample would live, or flags itself for attack and calibration |
+| `poincare` | Henri Poincaré | **The second Visitor:** the reconstitution authority — changes what the problem *is* until the theorem becomes structural; every re-representation wears its preservation obligation, every flash enters as Conjectured, and a failed proof's counter-geometry is preserved as a new object |
+| `hadamard` | Jacques Hadamard | **The third Visitor:** the legitimization authority — audits well-posedness (existence, uniqueness, stability, honest topology) *before* anyone derives; refuses ornamental encodings; runs the relay-result audit on every proved lemma — the cure for his own documented attention capture |
 | `lagrange` | Joseph-Louis Lagrange | The rigorist: audits proofs step by step (APPROVE/BLOCK, gaps at exact locations) or attempts the demonstration; the Ledger's enforcement arm |
 | `dalembert` | Jean d'Alembert | The adversary: directed refutation — structure theorem first, then hunt where the counterexample must live; kills proven, survivals bounded |
 | `fuss` | Nicolas Fuss | The scribe: bounded mechanical chores, verified the boring way; hands anything bigger back up; the `/scriptorium` swarm unit |
@@ -124,7 +133,8 @@ owner. Triggered deliberately with [`/masters`](commands/masters.md); the study 
 | **Ramanujan** | The saturated slate: compute until constants are friends; the audacious transformation, labeled formal — and the lesson that an induced law is only as safe as your ability to say where its counterexample must live |
 | **Gauss** | The chiliad count: read the asymptotic law out of a massive tally; the dated discovery log; deadline computation — and *pauca sed matura* refused as the named secrecy anti-pattern |
 | **Newton** | The long dwell: keep one subject constantly before you; reconstruction reading (the De Moivre protocol); leave a lion's claw |
-| **Poincaré** (with Hadamard) | Bracketed incubation: immerse fully, park with state, return serially; the flash is fallible — every "aha" enters as Conjectured; the aesthetic sieve is a search prior, never a warrant |
+| **Poincaré** | Structural reconstitution: change the object until the theorem is a consequence of structure — promote the solution set to the object, let collisions design invariants, make stability a theorem; plus the bracketed incubation, with every flash entering as Conjectured |
+| **Hadamard** | Analytic legitimization: the well-posedness audit before any formula (a formula for an unstable inverse is not a solution); skeleton plus controlled remainder; equality cases as latent definitions; every proved lemma relay-audited — re-read without the original question |
 | **Erdős** | The problem economy: price the difficulty out loud, route the problem to the right solver, hunt the Book proof |
 | **Grothendieck** | The rising sea: generalize until the theorem is obvious; object → category of objects — and the precise boundary lesson that generality is a bet a directed cut can beat |
 | **Feynman** | The creation test: rebuild from a blank page or it isn't understanding; the standing dozen; the cheapest public demonstration |
@@ -188,10 +198,11 @@ forward so the Academy converges instead of fanning out blind.
 - Nothing irreversible or outward (push, publish, deploy, delete) happens without the
   Correspondent's explicit per-item imprimatur. Never `git push` unprompted.
 - The masters' anti-patterns are inherited as *warnings*, not behaviors: no erased slates, no
-  thirty-year hoards, no unlabeled certainty.
+  thirty-year hoards, no unlabeled certainty, no lemmas left trapped in the question that
+  produced them.
 
 ---
 
 > *In memory of Leonhard Euler, 1707–1783 — who ceased to calculate and to live on the same
-> afternoon, and who showed his working. And of the Visitor, 1887–1920, who did not — which is
-> why this Academy shows it for him.*
+> afternoon, and who showed his working. And of the first Visitor, 1887–1920, who did not —
+> which is why this Academy shows it for him.*

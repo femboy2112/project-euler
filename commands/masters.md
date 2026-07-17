@@ -1,5 +1,5 @@
 ---
-description: Consult the masters' wing — apply another S-tier mathematician's signature skillset, in general form, to the problem on the table. Name a master (ramanujan, gauss, newton, poincare, erdos, grothendieck, feynman, tao) to run that lens deliberately, or hand it the problem and the dispatch picks the lens whose signature fits the stall. Each lens is a documented, dossier-receipted move-set (the-masters skill): Ramanujan's saturated slate, Gauss's chiliad count, Newton's long dwell, Poincaré's bracketed incubation, Erdős's problem economy, Grothendieck's rising sea, Feynman's creation test, Tao's post-rigorous stage. Everything lands Ledger-labeled; the masters' own anti-patterns (erased slate, thirty-year hoard, unlabeled certainty) are refused. Runs plain when /euler-mode is off, in voice when it's on.
+description: Consult the masters' wing — apply another S-tier mathematician's signature skillset, in general form, to the problem on the table. Name a master (ramanujan, gauss, newton, poincare, hadamard, erdos, grothendieck, feynman, tao) to run that lens deliberately, or hand it the problem and the dispatch picks the lens whose signature fits the stall. Each lens is a documented, dossier-receipted move-set (the-masters skill): Ramanujan's saturated slate, Gauss's chiliad count, Newton's long dwell, Poincaré's structural reconstitution (with the bracketed incubation), Hadamard's analytic legitimization (the well-posedness audit; the relay-result discipline), Erdős's problem economy, Grothendieck's rising sea, Feynman's creation test, Tao's post-rigorous stage. Everything lands Ledger-labeled; the masters' own anti-patterns (erased slate, thirty-year hoard, unlabeled certainty, attention capture) are refused. Runs plain when /euler-mode is off, in voice when it's on.
 argument-hint: "<master-name | the problem to dispatch> | list"
 ---
 
@@ -12,8 +12,8 @@ general form, its dispatch table, and its boundary lessons — lives in the `the
 this command is its trigger.
 
 **Parse `$ARGUMENTS`:**
-- **A master's name** (`ramanujan`, `gauss`, `newton`, `poincare`, `erdos`, `grothendieck`,
-  `feynman`, `tao`) → run that lens on the problem currently on the table.
+- **A master's name** (`ramanujan`, `gauss`, `newton`, `poincare`, `hadamard`, `erdos`,
+  `grothendieck`, `feynman`, `tao`) → run that lens on the problem currently on the table.
 - **A problem statement** → dispatch: pick the lens whose signature fits (per the skill's
   dispatch table), say which and why in one line, then run it.
 - **`list`** → print the dispatch table (situation → lens, one line each) and stop.
@@ -28,10 +28,13 @@ this command is its trigger.
    powdered wig.
 3. **Run the moves on the actual problem.** Ramanujan's lens computes (spawn `ramanujan` for
    the full saturated-slate treatment, or work the slate inline for a quick pass); Gauss's
-   counts in chiliads; Grothendieck's asks what setting makes it obvious; Poincaré's parks
-   with state; Feynman's rebuilds from a blank page; Erdős's prices the slate and routes;
-   Newton's commits to the long dwell; Tao's names the stage and specializes. The historical
-   anchor is the receipt, never the content of the answer.
+   counts in chiliads; Grothendieck's asks what setting makes it obvious; Poincaré's
+   reconstitutes the object or parks with state (spawn `poincare` for the full atlas);
+   Hadamard's audits well-posedness before anything is derived and relay-audits whatever was
+   just proved (spawn `hadamard` for the full seminar); Feynman's rebuilds from a blank page;
+   Erdős's prices the slate and routes; Newton's commits to the long dwell; Tao's names the
+   stage and specializes. The historical anchor is the receipt, never the content of the
+   answer.
 4. **Pay before you claim.** Lens output obeys the house rules: formal manipulations labeled
    formal with the payment schedule attached; flashes of certainty logged Conjectured;
    generalizations priced (frederick's interrogation applies) before they're built.
@@ -45,7 +48,7 @@ this command is its trigger.
   (no missing label).
 - **No authority theater.** "Grothendieck would say" is not an argument; the lens earns its
   keep by what it computes, proves, or refutes on THIS problem. Quotes trace to the dossiers
-  (`research/`, V–VIII) and keep their labels.
+  (`research/`, V–IX) and keep their labels.
 - **Scratch computation only** — the pass observes and conjectures; it doesn't modify the real
   tree, commit, or push.
 

@@ -26,9 +26,9 @@ false starts included. What is documented can be studied; what can be studied ca
 - **[The-Iron-Rule](The-Iron-Rule.md)** — why the persona is safe: the voice rides the prose,
   the facts stay exact.
 - **[The-Masters](The-Masters.md)** — the masters' wing: Ramanujan, Gauss, Newton, Poincaré,
-  Erdős, Grothendieck, Feynman, Tao — each unique skillset distilled into general form, with
-  receipts and boundary lessons.
-- **[The-Cast](The-Cast.md)** — the ten members of the Academy and what each is for.
+  Hadamard, Erdős, Grothendieck, Feynman, Tao — each unique skillset distilled into general
+  form, with receipts and boundary lessons.
+- **[The-Cast](The-Cast.md)** — the twelve members of the Academy and what each is for.
 - **[Folklore-Firewall](Folklore-Firewall.md)** — the debunked anecdotes this plugin refuses to
   repeat as fact, with the debunking receipts.
 - **[Session-Modes](Session-Modes.md)** — /euler-mode, /academy, /opera, and the one-shots.
@@ -36,7 +36,7 @@ false starts included. What is documented can be studied; what can be studied ca
 
 ## The receipts
 
-Everything historical in this plugin traces to the eight research dossiers in
+Everything historical in this plugin traces to the nine research dossiers in
 [`research/`](../research/). Dossiers I–IV are the Euler study — compiled from primary and
 scholarly sources (Pólya's *Mathematics and Plausible Reasoning* read in scan, the 1783 Fuss
 and Condorcet eulogies in English and French, 15 of Ed Sandifer's "How Euler Did It" columns,
@@ -45,9 +45,11 @@ Gautschi, Lemmermeyer, Aycock). Dossiers V–VIII are the masters' wing — Rama
 *Twelve Lectures*, Littlewood, Berndt), Gauss and Newton (the Encke letter, the Tagebuch, the
 Newton Project manuscripts), Poincaré and Hadamard (*Mathematical Creation* read in the primary
 Halsted printing), and the moderns (Gowers, McLarty, Cartier, Rota, the Rogers Commission
-transcript, Tao's own advice pages). Every claim is labeled VERBATIM / PARAPHRASE /
-LEGEND-UNVERIFIED with a URL for what was actually read. The plugin holds itself to its own
-Ledger.
+transcript, Tao's own advice pages). Dossier IX — the Poincaré–Hadamard *generative methods*
+report, supplied by the Correspondent — powers the `poincare` and `hadamard` agents; its
+provenance header maps its own evidence discipline onto the house labels. Every claim is
+labeled VERBATIM / PARAPHRASE / LEGEND-UNVERIFIED with its source stated. The plugin holds
+itself to its own Ledger.
 
 ## Install
 

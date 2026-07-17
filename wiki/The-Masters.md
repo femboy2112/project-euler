@@ -3,22 +3,23 @@
 The plugin's founding thesis is that Euler's *method* did an un-insignificant portion of his
 work, and that the method is transplantable because he documented it. The masters' wing extends
 the same thesis to the other S-tier minds whose working method survives on the record — and
-holds the additions to the same standard: **primary-source research first** (dossiers V–VIII in
+holds the additions to the same standard: **research first** (dossiers V–IX in
 [`research/`](../research/), every claim labeled VERBATIM / PARAPHRASE / LEGEND-UNVERIFIED),
 then each master's unique skillset distilled into **general form** — a named operation you can
 run on any problem, not a gallery of anecdotes.
 
 The repertoire itself lives in the [`the-masters`](../skills/the-masters/SKILL.md) skill and is
-triggered by [`/masters`](../commands/masters.md); Ramanujan additionally joins the Academy as
-a full cast member (see [The-Cast](The-Cast.md)). This page is the study behind them.
+triggered by [`/masters`](../commands/masters.md); Ramanujan, Poincaré, and Hadamard
+additionally join the Academy as full cast members — the three Visitors (see
+[The-Cast](The-Cast.md)). This page is the study behind them.
 
 ## The organizing axis — Gowers's two cultures
 
 Gowers (*The Two Cultures of Mathematics*): problem-solvers hold that "the point of
 understanding mathematics is to become better able to solve problems"; theory-builders that
 "the point of solving problems is to understand mathematics better." Euler, Erdős, Ramanujan,
-and Feynman work the first pole. Grothendieck *is* the second. Gauss, Newton, Poincaré, and Tao
-sit between. The wing's practical value is that most stalls are a culture mismatch — a
+and Feynman work the first pole. Grothendieck *is* the second. Gauss, Newton, Poincaré,
+Hadamard, and Tao sit between. The wing's practical value is that most stalls are a culture mismatch — a
 problem-solver's task wrongly hammered with theory, or a theory-shaped hole wrongly attacked
 case by case — and the dispatch table exists to catch that.
 
@@ -59,17 +60,39 @@ farther, "till by degrees he made himself master of the whole" — the reconstru
 a way of reading. His hoard (fluxions 1665, published 1704–11) manufactured the Leibniz war:
 the second exhibit, with Gauss, in the wing's case against secrecy.
 
-**Poincaré and Hadamard — the Bracketed Incubation** (dossier VII). The one first-rank
-mathematician who documented his own discovery process from the inside (*Mathematical
-Creation*, 1908), systematized by Wallas (1926) and stress-tested by Hadamard (1945). The
-protocol: full-effort immersion (inspirations "never happen except after some days of voluntary
-effort which has appeared absolutely fruitless"), then the park, then the flash — and then the
-non-negotiable close, because "often this feeling deceives us without being any the less
-vivid." Honest framing, flagged in the dossier: a session has no sleeping unconscious — the
-*mechanism* does not transplant, but the *protocol* does, and it converges exactly with Euler's
-documented serial-return habit. Two independent primary records, one move. The wing also takes
-Einstein's letter to Hadamard (thought as "signs and more or less clear images," words "only in
-a secondary stage") as independent testimony for understanding-over-storage.
+**Poincaré — the Structural Reconstitution** (dossiers VII and IX). Two layers, and the famous
+one is the smaller. The famous layer: the one first-rank mathematician who documented his own
+discovery process from the inside (*Mathematical Creation*, 1908), systematized by Wallas
+(1926) and stress-tested by Hadamard (1945) — full-effort immersion, the park, the flash, and
+the non-negotiable close ("often this feeling deceives us without being any the less vivid").
+A session has no sleeping unconscious: the *mechanism* does not transplant, but the *protocol*
+does, and it converges with Euler's serial return. The deeper layer, reconstructed law by law
+in dossier IX: his generative method was **changing what the problem is** — do not ask how to
+derive the statement; ask what re-representation makes it a consequence of structure. Promote
+the solution set to the object (the phase portrait instead of the formula); compress evolution
+to a return map; let colliding invariants design the next one (Betti numbers failed to
+classify, so: the fundamental group); find the organizing minority; make stability a theorem.
+The boundary lesson is his own prize memoir: the error, corrected, exposed the homoclinic
+tangle and founded modern dynamics — so every re-representation states its preservation
+obligation, and a failed proof's counter-geometry is preserved as a new object. The wing also
+takes Einstein's letter to Hadamard (thought as "signs and more or less clear images," words
+"only in a secondary stage") as independent testimony for understanding-over-storage.
+
+**Hadamard — the Analytic Legitimization** (dossier IX). Not Poincaré's echo — his complement;
+the dossier runs them as a two-operator loop (*what is the correct global object?* / *what
+determines it and makes inference stable?*). His most transplantable idea is the
+**well-posedness audit**: before deriving anything, ask whether the requested output even
+exists, is unique, and depends continuously on the data — in a topology justified by the
+observables — because "a formula for an unstable inverse is not a solution in any operational
+sense." Then the analytic arsenal in general form: encode only in ambient categories that
+contribute theorems (the prime number theorem pipeline), with the inversion formula proved;
+reconstruct the whole from skeleton plus growth-controlled remainder (his factorization
+theorem, as a research move); mine equality cases as latent definitions; generalize the role,
+never the formula; and treat every proved lemma as a **relay-result** — re-read without the
+original question. His documented failure is the wing's second mirror-image anti-pattern:
+**attention capture** — he candidly recorded missing consequences sitting in his own formulas
+because he was looking past them at a famous target; the relay audit is the cure he prescribed
+himself.
 
 **Erdős — the Problem Economy** (dossier VIII). "The prince of problem solvers and the absolute
 monarch of problem posers" (Straus — who also wrote "In many ways, Paul Erdős is the Euler of
@@ -127,5 +150,11 @@ Dossiers V–VIII were compiled the same way as I–IV: web-research agents on p
 scholarly sources, every claim labeled, URLs recorded, conflicts preserved rather than
 resolved, and the folklore harvested deliberately — the wing added a dozen entries to the
 [Folklore-Firewall](Folklore-Firewall.md), from the Gauss schoolroom legend to the true owner
-of the coffee-into-theorems line (Rényi, not Erdős). The plugin holds its newest wing to its
+of the coffee-into-theorems line (Rényi, not Erdős). Dossier IX
+(`poincare-hadamard-generative-methods.md`) arrived by a different route — a compiled research
+report supplied by the Correspondent — and ships because it carries its own three-level
+evidence discipline (explicit testimony / reconstructed practice / prescriptive synthesis),
+mapped onto the house labels in its provenance header. Division of authority where VII and IX
+overlap: **VII is the quote authority, IX is the method authority** — and IX's numbered "laws"
+are its own synthesis, never quotations of either man. The plugin holds its newest wing to its
 oldest rule: no silent upgrades, anywhere, ever.
