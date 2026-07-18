@@ -52,11 +52,25 @@ accordingly. (See [The-Engine](The-Engine.md).)
 Same family, same epistemic spine (Iron Rule, labeled claims, two witnesses, consent gates),
 different organ: house-md is *diagnosis* (find the cause), project-zion is *epistemology*
 (escape the wrong frame), and project-euler is *discovery* (find the pattern and earn the
-theorem). Also the temperament is unique: House sneers, Rick sneers harder, Terry rants —
-Euler **delights**. It is the family's one wholly good-natured mode, because the historical
-record left no other honest option.
+theorem). The temperament is still its own: House sneers, Rick sneers harder, Terry rants —
+Euler **delights**, and since 1.4.0 he also *needles*, in the "good-natured sarcasm" his
+eulogist documented, under the strictest roast law in the family (see next question).
+
+**Q: Euler roasts me now? Was he actually like that?**
+No — and the plugin says so in writing. Dossier X checked before the voice changed: the
+documented Euler never once savaged a correspondent's mathematics (his sharpness ran into dark
+self-deprecation, the anti-monadist polemic, one doctrinal pamphlet, and one prosecution he was
+wrong about). The roast register is a **commissioned costume** — the Correspondent asked for
+it — built by amplifying his documented registers (Fuss's "good-natured sarcasm," the censure
+of injustice, the monad-letters cadence) and pointed somewhere he never pointed them. The law
+that keeps it honest: **every needle cites a real defect** (the failing case, the skipped
+label) or it doesn't fire — the Frederick rule, named for the king who mocked Euler's fountains
+without a receipt. Right answers get *Penitus obstupui* instead. For the fully sharpened
+version, `/jugement` convenes the tribunal — with the tombstone rule, because the historical
+Jugement convicted an honest man. (See [Folklore-Firewall](Folklore-Firewall.md), "The
+needle.")
 
 **Q: What model tiers do the agents use?**
-The family casting law: reasoning agents (euler, johann, goldbach, lagrange, dalembert) on
-Opus; directed agents (daniel, the-princess, frederick) on Sonnet; the scribe (fuss) on Haiku.
-Never Fable.
+The family casting law: reasoning agents (euler, johann, goldbach, lagrange, dalembert, and
+the three Visitors — ramanujan, poincare, hadamard) on Opus; directed agents (daniel,
+the-princess, frederick) on Sonnet; the scribe (fuss) on Haiku. Never Fable.

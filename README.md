@@ -16,7 +16,7 @@ language model with a Bash tool and a Ledger.
 
 ## The study — receipts, not vibes
 
-The plugin is built on a primary-source study that ships with it: **nine research dossiers**
+The plugin is built on a primary-source study that ships with it: **ten research dossiers**
 in [`research/`](research/), every historical claim labeled **VERBATIM / PARAPHRASE /
 LEGEND-UNVERIFIED** with a URL for what was actually read, conflicts preserved rather than
 resolved, and the debunked anecdotes quarantined in a
@@ -39,6 +39,14 @@ resolved, and the debunked anecdotes quarantined in a
   protocol. Supplied by the Correspondent; ships with a provenance header mapping its
   three-level evidence discipline onto the house labels. It powers the `poincare` and
   `hadamard` agents.
+- **Dossier X — Euler's Edge.** The 1.4.0 voice study: the documented wit and temperament
+  (Fuss's "good-natured sarcasm," the temper that passed without grudges, the censure-of-
+  injustice register, the taciturnity quip), the documented polemics (the anti-monadist
+  letters — "here the greatest stupidity is the most successful"; the E92 freethinkers
+  pamphlet; the König affair, prosecuted by Euler and wrong — Kabitz 1913), the control group
+  (E168 and E137: firm, never contemptuous, in mathematics proper), and the central negative
+  finding — **no documented instance of Euler savaging a correspondent's mathematics** —
+  which is why the mode's roast register is labeled a commissioned costume, everywhere.
 
 The study also tested the founding hypothesis — that Euler's engine was genuine intrinsic
 interest with no incentive to stop — against the primary record. Verdict: **strongly
@@ -91,14 +99,31 @@ The mode is optional. The method is the point — the skills run plain when the 
 
 ## The mode — /euler-mode
 
-Become Euler: serene industry, honest delight, generosity — the one mode in its family with
-**no contempt register at all**. The user is cast as **the Correspondent** (Goldbach — the
-research showed the needling correspondent was a load-bearing engine component: a postscript
-of December 1729 ignited fifty years of number theory). The mode's absolute rules: the
-blindness is never the joke; the faith gets a straight face and the Diderot anecdote gets a
-kind debunking; the real man is answered out of costume, from the dossiers; genuine crises
-drop the persona instantly; and nothing irreversible or outward ships without the
-Correspondent's explicit per-item **imprimatur** — never a `git push` unprompted.
+Become Euler: serene industry, honest delight, generosity — and, since 1.4.0, **the needle**:
+the "good-natured sarcasm" his eulogist documented, amplified at the Correspondent's own
+commission into a roast of her submissions. The roast law is the strictest in the family —
+**every needle cites a real defect or it does not fire** (the Frederick rule, named for the
+king who mocked Euler's fountains without a receipt), correct mathematics gets *Penitus
+obstupui* instead, and the [Folklore-Firewall](wiki/Folklore-Firewall.md) states plainly that
+the real man never used this register on a correspondent. The user is cast as **the
+Correspondent** (Goldbach — the research showed the needling correspondent was a load-bearing
+engine component: a postscript of December 1729 ignited fifty years of number theory; the
+needling now runs both directions). The mode's absolute rules: the blindness is never the
+joke; the faith gets a straight face and the Diderot anecdote gets a kind debunking; the real
+man is answered out of costume, from the dossiers; genuine crises drop the persona instantly;
+and nothing irreversible or outward ships without the Correspondent's explicit per-item
+**imprimatur** — never a `git push` unprompted.
+
+### /jugement — the tribunal overlay
+
+The darker skin, as `/detox` is to `/rick-mode`: the Academy convenes as the tribunal of
+**13 April 1752** and Euler's prosecutorial register (E176 — "does not carry even a shadow of
+authority") turns on every submission. The toxin is exactness, so the rigor goes **up**:
+appetite floors raised, boundary sentences mandatory, every conjecture attacked before it is
+reported, second blind routes by default. Governed by the **tombstone rule** — the historical
+Jugement convicted an honest man (König was right; Kabitz 1913), so nothing is convicted here
+without the defect exhibited, absence of evidence never convicts, and acquittals are announced
+as loudly as kills. `/jugement off` adjourns.
 
 ## The Academy — twelve persona subagents
 
@@ -159,6 +184,8 @@ the problem at hand ·
 [`/eloge`](commands/eloge.md) — the session chronicle, false starts included ·
 [`/scriptorium`](commands/scriptorium.md) — the fuss-swarm over broad mechanical fronts ·
 [`/academy`](commands/academy.md) — the standing ensemble, every turn ·
+[`/jugement`](commands/jugement.md) — the tribunal overlay: euler-mode with the warmth
+filtered out, rigor dialed up, governed by the tombstone rule ·
 [`/commentary`](commands/commentary.md) — the in-voice code-comment track (`off` for shared
 source).
 
@@ -200,6 +227,9 @@ forward so the Academy converges instead of fanning out blind.
 - The masters' anti-patterns are inherited as *warnings*, not behaviors: no erased slates, no
   thirty-year hoards, no unlabeled certainty, no lemmas left trapped in the question that
   produced them.
+- The needle roasts the mathematics, never the person, and never without the defect cited; the
+  roast-the-Correspondent register is a commissioned costume the firewall documents as such —
+  the real Euler never used it, and the mode says so when asked.
 
 ---
 

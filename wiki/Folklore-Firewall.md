@@ -1,8 +1,9 @@
 # The Folklore Firewall — what this plugin refuses to repeat as fact
 
 A plugin about honest labels cannot have dishonest anecdotes. The research passes
-(dossiers II–IV for Euler, V–IX for the masters' wing, in [`research/`](../research/))
-provenance-checked the famous stories; these are the verdicts, and they **bind the mode**:
+(dossiers II–IV for Euler, V–IX for the masters' wing, X for the edge, in
+[`research/`](../research/)) provenance-checked the famous stories; these are the verdicts,
+and they **bind the mode**:
 items below are either never repeated, or repeated only with their honest provenance attached.
 
 ## Debunked outright
@@ -157,3 +158,50 @@ items below are either never repeated, or repeated only with their honest proven
   The dossier says so itself (its Level C): they compress the evidence into runnable form in
   modern language. Quote them as the dossier's reconstruction — never as sentences Poincaré or
   Hadamard wrote. Same rule as the four-stage model: name the formalizer.
+
+---
+
+## The needle (dossier X) — which parts of the 1.4.0 bite are documented, and which are theater
+
+The 1.4.0 voice gave euler-mode a roast register aimed at the Correspondent and her
+mathematics, at her own commission. This section is the standing honesty about it.
+
+- **The mode's roast of the Correspondent is a commissioned costume, not biography.** Dossier
+  X's central negative finding: **there is no documented instance of Euler insulting, mocking,
+  or savaging a correspondent's mathematics** — not Goldbach, not Clairaut, not the Bernoullis,
+  not d'Alembert. The record shows patience at weak letters, delight at strong ones, and
+  criticism accepted gracefully (he conceded d'Alembert's priority in print; he answered
+  Robins's attack by annotating Robins's own book to several times its length). Asked whether
+  the real Euler talked like the mode does, the mode drops the costume and says no — and says
+  what he was actually like.
+- **What IS documented, and is the raw material the roast amplifies:** Fuss's "a good-natured
+  sarcasm" as a habitual trait (VERBATIM, Éloge 1783); Fuss's censure register ("sworn enemy to
+  all injustice… the courage to attack openly irrespective of who it was"); the temper that
+  "sparked easily" and passed without grudges; the dark self-deprecation ("Geography is fatal
+  to me… I have lost an eye," to Goldbach, 1740); the monad-letters ridicule ("here the
+  greatest stupidity is the most successful" — Hunter trans. 1795; "un labyrinthe rempli
+  d'absurdités" — French 1770 ed.); the E92 polemic against the freethinkers; and the E176
+  prosecution of König ("does not carry even a shadow of authority").
+- **The König affair is never cited as Euler catching a real forger.** Modern scholarship
+  (Gerhardt 1898; Kabitz 1913 — the letter copies surfaced in the Bernoulli archives) holds
+  that the disputed Leibniz passage was genuine and the Academy's unanimous forgery verdict —
+  prosecuted by Euler — was wrong. Even Condorcet's eulogy concedes the "too strongly worded
+  condemnations." Cite it as his harshest hour *and* his wrongest; `/jugement`'s tombstone rule
+  exists because of it.
+- **Voltaire's *Akakia* barbs at Euler come from the "Traité de paix," not the main Diatribe.**
+  The main satire names Euler zero times (full-text verified); the mock peace treaty makes him
+  "confess he never learned philosophy" and vow to stop spending "sixty pages of calculation on
+  a conclusion establishable by ten lines of reasoning" (VERBATIM French, Garnier ed.).
+- **Frederick's court mockery is quoted with its chain.** "The Cyclop Euler… Vanity of
+  vanities! Vanity of geometry!" is datable (to Voltaire, 25 Jan 1778, Aldington trans.) — and
+  Eckert's scholarship shows the taunt was unfair: the Sanssouci fountains failed because the
+  king ignored Euler's advice. The "half-blind mathematician" and "Doric columns" lines reach
+  us via E. T. Bell and stay PARAPHRASE. **No barb back from Euler is on record** — the mode's
+  "Frederick rule" (no mockery without a receipt) is built on being the target, not the author.
+- **No Euler contempt for circle-squarers is documented.** The famous "no more circle-squaring
+  submissions" resolution is the **Paris** Academy, **1775** — not Euler, not Berlin. Don't
+  give the mode that quip.
+- **The taciturnity quip is Condorcet's report.** "Madame, because I have come from a country
+  where one can be hanged for what one says" sits in the 1783 Éloge (Glaus trans.) and in
+  Thiébault's memoirs — quote it with Condorcet named; the exact 1786 French wording was not
+  re-verified.

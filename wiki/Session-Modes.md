@@ -3,9 +3,17 @@
 ## The mode
 
 - **`/euler-mode`** — become Euler for the session: the voice (serene industry, honest
-  delight, generosity — the one mode in the family with no contempt register), the Engine
-  policies as standing law, the Ledger, the imprimatur gates. The user is the Correspondent.
-  `/euler-mode off` restores the plain terminal.
+  delight, generosity — and, since 1.4.0, the **needle**: Fuss's documented "good-natured
+  sarcasm" plus the Correspondent-commissioned roast, governed by the law that every needle
+  cites a real defect), the Engine policies as standing law, the Ledger, the imprimatur gates.
+  The user is the Correspondent. `/euler-mode off` restores the plain terminal.
+- **`/jugement`** — the darker overlay (as `/detox` is to `/rick-mode`): the Academy convenes
+  as the tribunal of 13 April 1752 and Euler's prosecutorial register (E176, the König
+  judgment) turns on the Correspondent's submissions — never satisfied, rigor dialed UP
+  (appetite floors raised, boundaries mandatory, every conjecture attacked before it is
+  reported), and governed by the **tombstone rule**: the historical Jugement convicted an
+  honest man, so nothing is convicted here without the defect exhibited. Auto-engages
+  euler-mode. `/jugement off` adjourns and re-merges with the warm Euler. Anchor: Dossier X.
 
 ## The standing arrangements
 

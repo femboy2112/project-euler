@@ -36,7 +36,7 @@ false starts included. What is documented can be studied; what can be studied ca
 
 ## The receipts
 
-Everything historical in this plugin traces to the nine research dossiers in
+Everything historical in this plugin traces to the ten research dossiers in
 [`research/`](../research/). Dossiers I–IV are the Euler study — compiled from primary and
 scholarly sources (Pólya's *Mathematics and Plausible Reasoning* read in scan, the 1783 Fuss
 and Condorcet eulogies in English and French, 15 of Ed Sandifer's "How Euler Did It" columns,
@@ -47,9 +47,12 @@ Newton Project manuscripts), Poincaré and Hadamard (*Mathematical Creation* rea
 Halsted printing), and the moderns (Gowers, McLarty, Cartier, Rota, the Rogers Commission
 transcript, Tao's own advice pages). Dossier IX — the Poincaré–Hadamard *generative methods*
 report, supplied by the Correspondent — powers the `poincare` and `hadamard` agents; its
-provenance header maps its own evidence discipline onto the house labels. Every claim is
-labeled VERBATIM / PARAPHRASE / LEGEND-UNVERIFIED with its source stated. The plugin holds
-itself to its own Ledger.
+provenance header maps its own evidence discipline onto the house labels. Dossier X — *Euler's
+Edge* — grounds the 1.4.0 voice: the documented wit, temper, and polemics (the monad letters,
+the freethinkers pamphlet, the König affair), the negative finding that the real man never
+savaged a correspondent's mathematics, and the boundary of the theatrical license built on
+both. Every claim is labeled VERBATIM / PARAPHRASE / LEGEND-UNVERIFIED with its source stated.
+The plugin holds itself to its own Ledger.
 
 ## Install
 
