@@ -1,0 +1,14 @@
+{
+  "id": "project-euler",
+  "name": "project-euler",
+  "agentNamespace": "project-euler",
+  "tiers": {},
+  "hooks": [],
+  "workflow": true,
+  "registerAgents": false,
+  "applyAgentTiers": true,
+  "registerCommands": true,
+  "registerSkills": true,
+  "registerMcp": true,
+  "commandHostNote": "---\n**OpenCode host note (managed).** Run the workflow described above by calling the `workflow.run` tool (in Code Mode: `tools.workflow.run({ script })`) with the JavaScript script you author. The same API applies: `agent(prompt, {label, agentType: 'project-euler:<name>', phase, schema, model, timeoutMs, worktree})`, `parallel([() => ...])`, `pipeline(items, ...stages)`, `phase(title)`, `log(msg)`. The tool returns `{runId, ok, value, phases, logs, receipts}`; `ok:false` means a child failed and must be reported as a failure, never as done. `agentType` maps to OpenCode agent IDs `project-euler/<name>`. There is no `/workflows` pane: inspect runs with `workflow.status({runId})` and the child sessions in the session list."
+}

@@ -236,3 +236,50 @@ forward so the Academy converges instead of fanning out blind.
 > *In memory of Leonhard Euler, 1707–1783 — who ceased to calculate and to live on the same
 > afternoon, and who showed his working. And of the first Visitor, 1887–1920, who did not —
 > which is why this Academy shows it for him.*
+
+---
+
+## OpenCode support (dual-host)
+
+This plugin runs on **Claude Code and OpenCode**. The intellectual content —
+`skills/`, `agents/`, `commands/`, `scripts/` — is canonical and shared.
+`opencode/` holds a thin adapter; nothing was forked.
+
+Architecture: canonical content → one host-neutral `opencode/host/manifest.json`
+→ the shared, hash-pinned adapter `opencode/host/runtime.ts`. The adapter registers
+the canonical skills and commands, generates native OpenCode agents, implements a
+Workflow-compatibility runtime over OpenCode child sessions, and translates the
+`SubagentStop` hook onto child-session completion events.
+
+### Install
+
+```sh
+bash scripts/opencode-install.sh     # symlinks this repo into ~/.config/opencode/
+bash scripts/opencode-validate.py    # static checks
+opencode service restart             # if the plugin does not appear
+```
+
+Idempotent, no user-config clobbering; uninstall with
+`bash scripts/opencode-uninstall.sh`.
+
+### What you get in OpenCode
+
+- Slash commands from this plugin's `commands/` (with `$ARGUMENTS` preserved).
+- Skills registered by id.
+- Generated agents `project-euler/<name>` usable as primary personas or subagents.
+- `workflow.run` / `workflow.status` tools: the canonical Workflow JS API
+  (`agent`, `parallel`, `pipeline`, `phase`, `log`, `schema`, `label`,
+  `agentType`, `worktree`, timeouts) over OpenCode child sessions.
+- The `/opera` research sequence (Observe → Conjecture → Attack & Verify → Demonstrate
+  → Publish) runs through `workflow.pipeline` with structured evidence transfer.
+
+### Semantic differences
+
+- Model tiers (`opus`/`sonnet`/`haiku`) resolve from
+  `opencode/host/tiers.local.json`, `OPENCODE_MODEL_*`, or the manifest; an unset
+  tier inherits the invoking model rather than inventing one.
+- There is no hosted `/workflows` pane. Inspect runs with `workflow.status({runId})`
+  and the child sessions in OpenCode's session list.
+- Claude's `PushNotification` has no OpenCode equivalent and is recorded, not granted.
+
+See `opencode/host/TRANSLATION.md` for the exact mapping and boundaries.
