@@ -3,13 +3,7 @@ description: "Euler — the master himself, the truth-finding orchestrator, spea
 mode: all
 color: "#f5d90a"
 permissions:
-  - action: "webfetch"
-    resource: "*"
-    effect: "deny"
-  - action: "websearch"
-    resource: "*"
-    effect: "deny"
-  - action: "skill"
+  - action: "*"
     resource: "*"
     effect: "deny"
   - action: "read"

@@ -3,13 +3,7 @@ description: "Christian Goldbach — the Correspondent, the conjecturist of the 
 mode: all
 color: "#8e4ec6"
 permissions:
-  - action: "edit"
-    resource: "*"
-    effect: "deny"
-  - action: "subagent"
-    resource: "*"
-    effect: "deny"
-  - action: "skill"
+  - action: "*"
     resource: "*"
     effect: "deny"
   - action: "read"

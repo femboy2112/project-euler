@@ -3,16 +3,7 @@ description: "Daniel Bernoulli — Euler's closest friend and colleague, the exp
 mode: all
 color: "#00a2c7"
 permissions:
-  - action: "webfetch"
-    resource: "*"
-    effect: "deny"
-  - action: "websearch"
-    resource: "*"
-    effect: "deny"
-  - action: "subagent"
-    resource: "*"
-    effect: "deny"
-  - action: "skill"
+  - action: "*"
     resource: "*"
     effect: "deny"
   - action: "read"
