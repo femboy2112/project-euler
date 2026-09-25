@@ -3,6 +3,7 @@
 import { defineHostPlugin } from "./runtime.ts"
 
 export default defineHostPlugin({
+  "agentHostNote": "---\n**OpenCode host note (managed).** You are running under OpenCode, not Claude Code. Where your\ninstructions above tell you to *spawn* a colleague via `agentType: 'project-euler:<name>'` on an\nOpus/Sonnet/Haiku tier, realize it in THIS host by composing the plugin's **safe workflow\nprimitives** in Code Mode (ordinary JavaScript calling permission-checked tools), never the Claude\nAgent/Task tool:\n\n1. `const {runId} = await tools[\"project-euler\"].workflow_start({name})`\n2. `await tools[\"project-euler\"].workflow_agent({runId, prompt, agentType:\"project-euler:<name>\",\n   label, phase, schema, verifyId})` \u2014 the cast names are identical; tiers (opus/sonnet/haiku)\n   resolve from the host's configured tier mapping.\n3. `Promise.all([...])` for parallel bearings; `workflow_status`/`workflow_finish` to record and\n   close; verify via `workflow_verify_prepare` + the host `shell` tool + `workflow_verify`.\n\nIf the `project-euler` workflow tools are not reachable in your session, do the work yourself in\nsequence or hand back \u2014 never emit Claude Task-tool calls this host will silently ignore. The\nLedger, the Iron Rule, and the imprimatur gates are unchanged; a child's report is testimony,\n`guard`/`sessionOutcome` are mechanical, and a `verify` receipt is a fresh host-attested execution.",
   "agentNamespace": "project-euler",
   "agentsDirs": [
     "agents"
@@ -13,7 +14,7 @@ export default defineHostPlugin({
       "adapter-validate": "python3 {root}/scripts/opencode-validate.py"
     }
   },
-  "canonicalRuntimeSha": "74b2755af2b5ae66fba2cde2f9d5da5f4757f48a956723b888ee15fe71dfda7c",
+  "canonicalRuntimeSha": "5f9e0a3552e1d27a80a65116d756e31b1780328d58bfabf73475efd81e2e6f7d",
   "commandAliases": [
     "academy",
     "basel",
@@ -42,7 +43,7 @@ export default defineHostPlugin({
   "registerMcp": true,
   "registerSkills": true,
   "runtimeApi": "opencode-2.0.14",
-  "runtimeVersion": "2.0.0",
+  "runtimeVersion": "2.1.0",
   "skillsDirs": [
     "skills"
   ],
@@ -52,6 +53,6 @@ export default defineHostPlugin({
     "sonnet": "directed"
   },
   "tiers": {},
-  "version": "1.4.0",
+  "version": "1.5.0",
   "workflow": true
 })

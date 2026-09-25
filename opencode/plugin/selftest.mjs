@@ -7,7 +7,7 @@ import {
   tokenizeArgs, parseOutcomeClaim, resolveTierModel, guardSnapshot, guardCheckAndRevert,
   resolveConfined, SchemaError, attestationIsFresh, trustedVerifies, evaluateVerificationDebts, isUnknownVerifyId,
 } from "./runtime.ts"
-import { writeFileSync, mkdtempSync, readFileSync, existsSync, symlinkSync, mkdirSync, unlinkSync, chmodSync, statSync, readlinkSync, rmSync, rmdirSync } from "node:fs"
+import { writeFileSync, mkdtempSync, readFileSync, existsSync, symlinkSync, mkdirSync, unlinkSync, chmodSync, statSync, lstatSync, readlinkSync, rmSync, rmdirSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 
@@ -73,6 +73,9 @@ ok("schema allOf", (() => { validateSchema(5, { allOf: [{ type: "number" }, { mi
 ok("schema allOf rejects", throws(() => validateSchema(-5, { allOf: [{ type: "number" }, { minimum: 0 }] })))
 ok("schema not", (() => { validateSchema("x", { not: { type: "number" } }); return true })())
 ok("schema not rejects", throws(() => validateSchema(3, { not: { type: "number" } })))
+// nested not: not(not(string)) is logically string — must not be corrupted by error-message sniffing
+ok("schema not(not(string)) accepts a string", (() => { validateSchema("hi", { not: { not: { type: "string" } } }); return true })())
+ok("schema not(not(string)) rejects a number", throws(() => validateSchema(42, { not: { not: { type: "string" } } })))
 ok("schema additionalProperties as schema", throws(() => validateSchema({ a: 1, b: "str" }, { type: "object", properties: { a: { type: "number" } }, additionalProperties: { type: "number" } })))
 ok("schema maxLength", throws(() => validateSchema("abcd", { type: "string", maxLength: 3 })))
 ok("schema exclusiveMinimum", throws(() => validateSchema(0, { type: "number", exclusiveMinimum: 0 })))
@@ -250,6 +253,25 @@ ok("reject absolute path", throws(() => resolveConfined(dir, "/etc/passwd")))
 symlinkSync(outside, join(dir, "escape"))
 ok("reject symlink escape", throws(() => resolveConfined(dir, "escape/secret.txt")))
 ok("allow in-workspace relative", (() => { try { resolveConfined(dir, "sub/nested.txt"); return true } catch { return false } })())
+
+// --- TOCTOU: an UNGUARDED intermediate ancestor swapped to a symlink between snapshot and revert
+//     must NOT let the writer escape the workspace (the depth>=2 write-time re-confinement) ---
+const toc = mkdtempSync(join(tmpdir(), "toctou-"))
+const tocWork = join(toc, "workspace"); const tocOut = join(toc, "OUTSIDE")
+mkdirSync(join(tocWork, "sub"), { recursive: true }); mkdirSync(tocOut, { recursive: true })
+writeFileSync(join(tocWork, "sub", "x"), "WORKSPACE-ORIGINAL")   // attacker-seeded pre-snapshot content
+writeFileSync(join(tocOut, "x"), "EXTERNAL-PRECIOUS-DO-NOT-TOUCH")
+const tocSnap = guardSnapshot(tocWork, ["sub/x"], false)        // guard a depth-2 file; `sub` is unguarded
+rmSync(join(tocWork, "sub"), { recursive: true, force: true })
+symlinkSync(tocOut, join(tocWork, "sub"))                        // child swaps the unguarded ancestor for a symlink out
+const tocRes = guardCheckAndRevert(tocSnap)
+ok("TOCTOU: external file NOT written/deleted through the symlinked ancestor",
+   existsSync(join(tocOut, "x")) && readFileSync(join(tocOut, "x"), "utf8") === "EXTERNAL-PRECIOUS-DO-NOT-TOUCH")
+ok("TOCTOU: the breach is reported (never a silent clean)", tocRes.touched === true)
+ok("TOCTOU: the symlinked ancestor is repaired to a real directory",
+   !lstatSync(join(tocWork, "sub")).isSymbolicLink() && statSync(join(tocWork, "sub")).isDirectory())
+ok("TOCTOU: the guarded file is restored in-place inside the workspace",
+   readFileSync(join(tocWork, "sub", "x"), "utf8") === "WORKSPACE-ORIGINAL")
 
 
 

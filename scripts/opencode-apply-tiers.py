@@ -33,7 +33,18 @@ if sf.exists():
     except Exception:
         sidecar = {}
 
-applied = inherit = 0
+# The agent-scoped OpenCode orchestration bridge (Claude->OpenCode). The canonical agent bodies
+# speak Claude Task-tool syntax; commandHostNote reaches only command sessions, so a spawner agent
+# invoked directly needs the equivalent guidance injected here at install time.
+agent_note = ""
+mf = repo / "opencode" / "plugin" / "manifest.json"
+if mf.exists():
+    try:
+        agent_note = json.loads(mf.read_text()).get("agentHostNote") or ""
+    except Exception:
+        agent_note = ""
+
+applied = inherit = bridged = 0
 for f in sorted(src.glob("*.md")):
     text = f.read_text()
     m = re.match(r"^---\n(.*?)\n---\n?(.*)$", text, re.S)
@@ -55,6 +66,10 @@ for f in sorted(src.glob("*.md")):
         applied += 1
     else:
         inherit += 1
+    is_spawner = re.search(r"action:\s*[\"']?subagent[\"']?", fm) is not None
+    if agent_note and is_spawner and "OpenCode host note" not in body:
+        body = body.rstrip() + "\n\n" + agent_note + "\n"
+        bridged += 1
     (dest / f.name).write_text(f"---\n{fm.lstrip(chr(10))}\n---\n{body}")
 (dest / ".managed-by").write_text(str(repo) + "\n")
-print(f"agents installed: {applied} tier-mapped, {inherit} inherit")
+print(f"agents installed: {applied} tier-mapped, {inherit} inherit, {bridged} orchestration-bridged")

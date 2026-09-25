@@ -35,13 +35,13 @@
 
 import {
   existsSync, readFileSync, readdirSync, statSync, mkdirSync, writeFileSync, rmSync,
-  lstatSync, realpathSync, readlinkSync, chmodSync, symlinkSync,
+  lstatSync, realpathSync, readlinkSync, chmodSync, symlinkSync, unlinkSync,
 } from "node:fs"
 import { join, dirname, basename, isAbsolute, relative, resolve } from "node:path"
 import { spawn } from "node:child_process"
 import { createHash } from "node:crypto"
 
-export const RUNTIME_VERSION = "2.0.0"
+export const RUNTIME_VERSION = "2.1.0"
 export const RUNTIME_API = "opencode-2.0.14"
 export const HOST_TESTED_VERSION = "2.0.14"
 
@@ -236,9 +236,11 @@ export function validateSchema(value: any, schema: any, path = "$"): void {
     if (n !== 1) throw new SchemaError(`expected exactly one oneOf match at ${path}, got ${n}`)
   }
   if (schema.not !== undefined) {
-    try { validateSchema(value, schema.not, path); throw new SchemaError(`not matched at ${path}`) } catch (e) {
-      if (e instanceof SchemaError && /not matched/.test(e.message)) throw e
-    }
+    // A boolean sentinel, not error-message matching: nested `not` legitimately throws its own
+    // "not matched" for an inner reason, and substring-sniffing it corrupted the outer verdict.
+    let matched = false
+    try { validateSchema(value, schema.not, path); matched = true } catch { /* value fails the not-schema, which is what we want */ }
+    if (matched) throw new SchemaError(`not matched at ${path}`)
   }
 }
 
@@ -461,47 +463,89 @@ export function guardSnapshot(root: string, paths: string[], trusted = false): G
   return { root: realpathSafe(root), entries }
 }
 
-function removeAny(abs: string) { try { rmSync(abs, { recursive: true, force: true }) } catch { /* best effort */ } }
+/**
+ * Remove a path WITHOUT ever following a symbolic link: a symlink is unlinked (the link itself,
+ * never the target it points at), so a swapped-in symlink can never be used to delete outside the
+ * workspace. Only a genuine file/dir is removed recursively.
+ */
+function removeAny(abs: string) {
+  try { if (lstatSync(abs).isSymbolicLink()) { unlinkSync(abs); return } } catch { /* fall through to rm */ }
+  try { rmSync(abs, { recursive: true, force: true }) } catch { /* best effort */ }
+}
+
+/**
+ * Re-confine a restore target at WRITE time (TOCTOU defense). `resolveConfined` confines paths only
+ * when the snapshot is TAKEN; between snapshot and revert an untrusted child can swap an *unguarded
+ * intermediate ancestor* for a symlink, so the frozen `e.abs` can no longer be trusted by the writer.
+ * This recomputes the target from root+rel, refusing to traverse any intermediate that is now a
+ * symlink or a non-directory, and repairs such a breached ancestor back to a real in-workspace
+ * directory (reporting the touch). Returns the safe absolute path, or null if the path escapes the
+ * workspace (in which case the caller writes nothing).
+ */
+function confineRestorePath(root: string, rel: string, touched: string[]): string | null {
+  if (rel === "." || rel === "") return root
+  const parts = rel.split(/[/\\]/).filter((p) => p && p !== ".")
+  if (!parts.length || parts.some((p) => p === "..")) return null
+  let cur = root
+  for (let i = 0; i < parts.length - 1; i++) {
+    cur = join(cur, parts[i])
+    let st: ReturnType<typeof lstatSync> | undefined
+    try { st = lstatSync(cur) } catch { st = undefined }
+    if (!st) { try { mkdirSync(cur) } catch { return null } continue }
+    if (st.isSymbolicLink() || !st.isDirectory()) {
+      // a real breach: an intermediate ancestor is no longer a genuine directory. Never traverse it;
+      // unlink the impostor (removeAny does not follow a symlink) and put a real directory back.
+      const crel = relative(root, cur)
+      if (!touched.includes(crel)) touched.push(crel)
+      removeAny(cur)
+      try { mkdirSync(cur) } catch { return null }
+    }
+  }
+  return join(cur, parts[parts.length - 1])
+}
 
 function restoreEntry(e: GuardEntry, root: string, touched: string[]) {
-  const cur = (() => { try { return lstatSync(e.abs) } catch { return undefined } })()
   const note = () => { if (!touched.includes(e.rel)) touched.push(e.rel) }
-  if (e.kind === "missing") { if (cur) { note(); removeAny(e.abs) } return }
+  // Never trust the frozen absolute path; re-derive and re-confine it against the live tree.
+  const abs = confineRestorePath(root, e.rel, touched)
+  if (abs === null) { note(); return }
+  const cur = (() => { try { return lstatSync(abs) } catch { return undefined } })()
+  if (e.kind === "missing") { if (cur) { note(); removeAny(abs) } return }
   if (e.kind === "symlink") {
-    const target = cur?.isSymbolicLink() ? readlinkSync(e.abs) : undefined
-    if (!cur || !cur.isSymbolicLink() || target !== e.linkTarget) { note(); removeAny(e.abs); try { symlinkSync(e.linkTarget!, e.abs) } catch { /* best effort */ } }
+    const target = cur?.isSymbolicLink() ? readlinkSync(abs) : undefined
+    if (!cur || !cur.isSymbolicLink() || target !== e.linkTarget) { note(); removeAny(abs); try { symlinkSync(e.linkTarget!, abs) } catch { /* best effort */ } }
     return
   }
   if (e.kind === "dir") {
     if (!cur) {
       // the protected directory itself was deleted — recreate it and report the touch
-      note(); mkdirSync(e.abs, { recursive: true })
+      note(); mkdirSync(abs, { recursive: true })
     } else if (!cur.isDirectory()) {
       // replaced by a file/symlink — report and put the directory back
-      note(); removeAny(e.abs); mkdirSync(e.abs, { recursive: true })
+      note(); removeAny(abs); mkdirSync(abs, { recursive: true })
     }
     const want = new Set((e.children ?? []).map((c) => basename(c.abs)))
-    const have = existsSync(e.abs) && statSync(e.abs).isDirectory() ? readdirSync(e.abs) : []
-    for (const h of have) if (!want.has(h)) { const child = join(e.abs, h); const crel = relative(root, child); if (!touched.includes(crel)) touched.push(crel); removeAny(child) }
+    const have = existsSync(abs) && statSync(abs).isDirectory() ? readdirSync(abs) : []
+    for (const h of have) if (!want.has(h)) { const child = join(abs, h); const crel = relative(root, child); if (!touched.includes(crel)) touched.push(crel); removeAny(child) }
     for (const c of e.children ?? []) restoreEntry(c, root, touched)
     if (e.mode !== undefined) {
-      const curMode = (() => { try { return statSync(e.abs).mode & 0o7777 } catch { return undefined } })()
-      if (curMode !== e.mode) { note(); try { chmodSync(e.abs, e.mode) } catch { /* best effort */ } }
+      const curMode = (() => { try { return statSync(abs).mode & 0o7777 } catch { return undefined } })()
+      if (curMode !== e.mode) { note(); try { chmodSync(abs, e.mode) } catch { /* best effort */ } }
     }
     return
   }
   // file
   const content = Buffer.from(e.contentB64 ?? "", "base64")
-  const same = cur?.isFile() && !cur.isSymbolicLink() && readFileSync(e.abs).equals(content)
+  const same = cur?.isFile() && !cur.isSymbolicLink() && readFileSync(abs).equals(content)
   if (!same) {
     note()
-    if (cur) removeAny(e.abs)
-    mkdirSync(dirname(e.abs), { recursive: true })
-    writeFileSync(e.abs, content)
+    if (cur) removeAny(abs)
+    mkdirSync(dirname(abs), { recursive: true })
+    writeFileSync(abs, content)
   }
   if (e.mode !== undefined) {
-    const curMode = (() => { try { return statSync(e.abs).mode & 0o7777 } catch { return undefined } })()
-    if (curMode !== e.mode) { note(); try { chmodSync(e.abs, e.mode) } catch { /* best effort */ } }
+    const curMode = (() => { try { return statSync(abs).mode & 0o7777 } catch { return undefined } })()
+    if (curMode !== e.mode) { note(); try { chmodSync(abs, e.mode) } catch { /* best effort */ } }
   }
 }
 
@@ -832,7 +876,9 @@ export function defineHostPlugin(manifest: HostManifest): { id: string; setup: (
               const ownAgent = typeof info?.agent === "string" && info.agent.startsWith(`${manifest.agentNamespace}/`)
               const ownChild = !!receipt && receipt.pluginId === manifest.id
               if (!ownChild && !ownAgent) continue // negative control: never lint another plugin's work
-              if (hook.ownsOutcomeContract && !ownChild && !ownAgent) continue
+              // outcome-contract hooks fire only for our own workflow children (which carry a receipt),
+              // never merely for a session that happens to run one of our namespaced agents.
+              if (hook.ownsOutcomeContract && !ownChild) continue
               const msgs = await ctx.session.context({ sessionID: sid }).catch(() => [])
               const { text } = readSessionResult(msgs as any[])
               await runClaudeHook(ctx, repoRoot, hook, {

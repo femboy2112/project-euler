@@ -104,9 +104,15 @@ run — the caller discharges the debt and finishes again.
   deleted / created files, directory-membership changes, type replacement, symlink
   retargets, and mode changes, then restores exact original state and reports every touched
   path. No UTF-8 round-trip; binary restores byte-for-byte.
-- **Workspace confinement.** Model-supplied `guardPaths` are resolved and rejected if they
-  escape the workspace via `..`, an absolute path, or a symlink. Repo-owned
-  `defaultProtected` paths are trusted.
+- **Workspace confinement, checked at snapshot AND at write.** Model-supplied `guardPaths` are
+  resolved and rejected if they escape the workspace via `..`, an absolute path, or a symlink.
+  Repo-owned `defaultProtected` paths are trusted. **The revert re-confines every target at write
+  time** (`confineRestorePath`): between snapshot and revert an untrusted child can swap an
+  *unguarded intermediate ancestor* for a symlink, so the writer never trusts the frozen absolute
+  path — it re-derives from root+rel, refuses to traverse a symlinked/non-directory ancestor,
+  repairs the impostor back to a real in-workspace directory, and reports the breach (never a
+  silent `clean`). `removeAny` unlinks a symlink instead of following it. Regression-tested in
+  `selftest.mjs` (the depth-≥2 TOCTOU escape).
 - **Verify is host-attested and fresh-bound, never self-certified.** See above — the plugin
   executes no verify shell, and a verification receipt is produced only from OpenCode's own
   telemetry for a real execution of the repo-owned trusted command, bound to a single-use
@@ -116,8 +122,28 @@ run — the caller discharges the debt and finishes again.
   mode-changed, or replaced by a file (and a file replaced by a directory) is restored and
   reported in `touchedPaths` — a mechanically restored breach never reports `clean`.
 
+### Agent-scoped orchestration bridge
+
+The canonical agent bodies are shared with the Claude host and speak the Claude Agent/Task tool
+(`agentType: 'project-euler:<name>'`, Opus/Sonnet/Haiku tiers). `commandHostNote` reaches only
+*command* sessions, so a **spawner** agent invoked directly (one granted the `subagent` action —
+`euler` alone) would otherwise read pure Claude syntax. At install, `opencode-apply-tiers.py`
+appends the manifest's `agentHostNote` to spawner agents, teaching them to orchestrate via the
+workflow primitives in Code Mode (identical cast names) and to degrade gracefully — do the work in
+sequence or hand back — if those tools are unreachable in-session, never emitting dead Task calls.
+The committed `opencode/agents/*.md` stay portable; the bridge is injected into the installed copy.
+
 ### Not reproduced (boundaries)
 
+- **Verification freshness is bound to challenge time and child completions, not to arbitrary
+  post-attestation edits.** `boundAt = max(challenge.createdAt, run.lastChildAt)` refuses evidence
+  that predates the challenge or the latest child, and challenge+attestation are single-use — but a
+  caller that runs the trusted command (fresh pass) and *then* directly mutates the tree in its own
+  session before `workflow_verify`/`workflow_finish` can still finish green. This is point-in-time
+  verification behaving as contracted (a receipt attests the run that happened, not the tree's later
+  state); reinforcing it to a tree-hash/mtime bound over the verified scope is a deliberate future
+  option, not a silent guarantee. Also unchanged: verify-command *hermeticity* (PATH shadowing) is
+  CI hygiene, outside the adapter.
 - No hosted `/workflows` monitoring pane; inspect runs with `workflow_status`.
 - `meta`/declarative DAGs from Claude workflows are not pre-registered; Code Mode composes.
 - Claude's `PushNotification` has no OpenCode action and is recorded, not granted.
