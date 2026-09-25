@@ -4,3 +4,6 @@
 node_modules/
 __pycache__/
 .scratch/
+
+# OpenCode adapter (managed)
+opencode/host/tiers.local.json

@@ -1,0 +1,50 @@
+{
+  "dalembert": {
+    "model": "opus",
+    "effort": "high"
+  },
+  "daniel": {
+    "model": "sonnet",
+    "effort": "high"
+  },
+  "euler": {
+    "model": "opus",
+    "effort": "high"
+  },
+  "frederick": {
+    "model": "sonnet",
+    "effort": "high"
+  },
+  "fuss": {
+    "model": "haiku",
+    "effort": "low"
+  },
+  "goldbach": {
+    "model": "opus",
+    "effort": "high"
+  },
+  "hadamard": {
+    "model": "opus",
+    "effort": "high"
+  },
+  "johann": {
+    "model": "opus",
+    "effort": "high"
+  },
+  "lagrange": {
+    "model": "opus",
+    "effort": "high"
+  },
+  "poincare": {
+    "model": "opus",
+    "effort": "high"
+  },
+  "ramanujan": {
+    "model": "opus",
+    "effort": "high"
+  },
+  "the-princess": {
+    "model": "sonnet",
+    "effort": "high"
+  }
+}

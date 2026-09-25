@@ -236,3 +236,52 @@ forward so the Academy converges instead of fanning out blind.
 > *In memory of Leonhard Euler, 1707–1783 — who ceased to calculate and to live on the same
 > afternoon, and who showed his working. And of the first Visitor, 1887–1920, who did not —
 > which is why this Academy shows it for him.*
+
+---
+
+## OpenCode support (dual-host)
+
+This plugin runs on **Claude Code and OpenCode**. Canonical content is shared; `opencode/`
+is a thin adapter and nothing is forked.
+
+### Install
+
+```sh
+bash scripts/opencode-install.sh
+python3 scripts/opencode-validate.py            # static checks
+python3 scripts/opencode-validate.py --runtime  # + live host registry probes
+python3 scripts/opencode-validate.py --live     # + a real Code Mode round-trip
+bash opencode/tests/live-matrix.sh              # + cold-host live integration matrix
+```
+
+The installer writes a managed **loader** `.ts`; generated agents are **copied** into
+`~/.config/opencode/agents/<ns>/` with model tiers injected at install time.
+
+### What you get
+
+- Commands registered as **`project-euler/<name>`** (namespace-safe when every plugin is installed).
+- Skills registered by id through the installed OpenCode `Skill.Info` contract (`path`).
+- Generated agents **`project-euler/<name>`** with a **closed, deny-first**
+  permission allowlist translated from the canonical `tools:` list — an explicitly
+  read-only agent cannot silently keep shell/edit/subagent capability.
+- **Workflow primitives** (`project-euler.workflow_start/agent/phase/log/status/verify_prepare/verify/cancel/finish`)
+  composed from OpenCode **Code Mode**. No model-authored string is ever evaluated by the
+  plugin process (`new Function`/`eval` removed); the model's JS runs only in Code Mode's
+  sandbox and reaches the world solely through permission-checked tools.
+- **Fresh-bound host-attested verification**: `workflow_verify_prepare({runId, verifyId})` opens
+  a single-use challenge; you run the repo-owned trusted command via the host `shell` tool; then
+  `workflow_verify({runId, verifyId, challengeId})` certifies only from OpenCode's own telemetry, and
+  only if the execution postdates the challenge and the latest child completion. A verifier
+  requested by `workflow_agent(... verifyId)` becomes a **mandatory debt**: `workflow_finish`
+  fails (`verify-missing`/`verify-stale`/`verify-failed`) until a fresh attested pass is recorded.
+
+### Semantic boundaries
+
+- Model tiers (`opus`/`sonnet`/`haiku` → `reasoning-heavy`/`directed`/`cheap`) resolve from
+  `opencode/host/tiers.local.json`, `OPENCODE_MODEL_*`, or the manifest; unset tiers inherit
+  the invoking model. Tiers are applied to the **copied** installed agent files at install
+  time; the committed `opencode/agents/*.md` stay provider-portable (no `model:` line).
+- Programmatic sessions cannot set a native `parentID` (OpenCode create drops it); ownership
+  is recorded metadata, and the session's `idle.outcome` is the completion contract.
+
+See `opencode/host/TRANSLATION.md` for the exact mapping and boundaries.
